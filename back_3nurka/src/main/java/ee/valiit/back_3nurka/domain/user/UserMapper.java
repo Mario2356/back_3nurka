@@ -5,15 +5,9 @@ import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface UserMapper {
-    @Mapping(source = "userId", target = "id")
-    @Mapping(source = "roleId", target = "role.id")
-    @Mapping(source = "roleType", target = "role.type")
-    User loginResponseToUser(LoginResponse loginResponse);
+    @Mapping(source = "id", target = "userId")
+    @Mapping(source = "role.id", target = "roleId")
+    @Mapping(source = "role.type", target = "roleType")
+    LoginResponse toLoginResponse(User user);
 
-    @InheritInverseConfiguration(name = "loginResponseToUser")
-    LoginResponse userToLoginResponse(User user);
-
-    @InheritConfiguration(name = "loginResponseToUser")
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    User updateUserFromLoginResponse(LoginResponse loginResponse, @MappingTarget User user);
 }

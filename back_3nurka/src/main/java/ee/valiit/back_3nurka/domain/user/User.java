@@ -23,14 +23,14 @@ public class User {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
-    @Size(max = 255)
+    @Size(max = 50)
     @NotNull
-    @Column(name = "username", nullable = false)
-    private String username;
+    @Column(name = "email", nullable = false, length = 50)
+    private String email;
 
-    @Size(max = 255)
+    @Size(max = 50)
     @NotNull
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false, length = 50)
     private String password;
 
 }
