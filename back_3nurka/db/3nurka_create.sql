@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2022-11-23 10:14:46.085
+-- Last modification date: 2022-11-28 12:08:52.981
 
 -- tables
 -- Table: address
@@ -14,6 +14,7 @@ CREATE TABLE address (
 CREATE TABLE bike (
                       id serial  NOT NULL,
                       brand_id int  NOT NULL,
+                      user_id int  NOT NULL,
                       model varchar(255)  NULL,
                       CONSTRAINT bike_pk PRIMARY KEY (id)
 );
@@ -23,10 +24,11 @@ CREATE TABLE bike_order (
                             id serial  NOT NULL,
                             order_id int  NOT NULL,
                             bike_id int  NOT NULL,
-                            package_id int  NOT NULL,
+                            work_type_id int  NOT NULL,
                             bike_status_id int  NOT NULL,
+                            package_id int  NULL,
                             date_from date  NOT NULL,
-                            date_to date  NOT NULL,
+                            date_to date  NULL,
                             tech_comment varchar(1000)  NULL,
                             customer_comment varchar(1000)  NULL,
                             CONSTRAINT bike_order_pk PRIMARY KEY (id)
@@ -69,11 +71,10 @@ CREATE TABLE district (
 CREATE TABLE "order" (
                          id serial  NOT NULL,
                          user_id int  NOT NULL,
-                         work_type_id int  NOT NULL,
                          status_id int  NOT NULL,
                          address_id int  NULL,
                          number varchar(20)  NOT NULL,
-                         date_from date  NOT NULL DEFAULT now(),
+                         date_from date  NULL DEFAULT NOW(),
                          date_to date  NULL,
                          price int  NULL,
                          CONSTRAINT order_ak_1 UNIQUE (number) NOT DEFERRABLE  INITIALLY IMMEDIATE,
@@ -119,7 +120,7 @@ CREATE TABLE "user" (
 -- Table: work_type
 CREATE TABLE work_type (
                            id serial  NOT NULL,
-                           name int  NOT NULL,
+                           name varchar(255)  NOT NULL,
                            CONSTRAINT work_type_ak_1 UNIQUE (name) NOT DEFERRABLE  INITIALLY IMMEDIATE,
                            CONSTRAINT work_type_pk PRIMARY KEY (id)
 );
@@ -173,6 +174,22 @@ ALTER TABLE bike_order ADD CONSTRAINT bike_order_package
             INITIALLY IMMEDIATE
 ;
 
+-- Reference: bike_order_work_type (table: bike_order)
+ALTER TABLE bike_order ADD CONSTRAINT bike_order_work_type
+    FOREIGN KEY (work_type_id)
+        REFERENCES work_type (id)
+        NOT DEFERRABLE
+            INITIALLY IMMEDIATE
+;
+
+-- Reference: bike_user (table: bike)
+ALTER TABLE bike ADD CONSTRAINT bike_user
+    FOREIGN KEY (user_id)
+        REFERENCES "user" (id)
+        NOT DEFERRABLE
+            INITIALLY IMMEDIATE
+;
+
 -- Reference: customer_address (table: customer)
 ALTER TABLE customer ADD CONSTRAINT customer_address
     FOREIGN KEY (address_id)
@@ -201,14 +218,6 @@ ALTER TABLE "order" ADD CONSTRAINT order_status
 ALTER TABLE "order" ADD CONSTRAINT order_user
     FOREIGN KEY (user_id)
         REFERENCES "user" (id)
-        NOT DEFERRABLE
-            INITIALLY IMMEDIATE
-;
-
--- Reference: order_work_type (table: order)
-ALTER TABLE "order" ADD CONSTRAINT order_work_type
-    FOREIGN KEY (work_type_id)
-        REFERENCES work_type (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
