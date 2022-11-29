@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @Setter
 @Entity
 @Table(name = "brand")
-public class Brand {
+public class BikeBrand {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;

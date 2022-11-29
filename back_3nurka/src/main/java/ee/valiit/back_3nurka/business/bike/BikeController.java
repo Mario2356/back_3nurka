@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.bike;
+package ee.valiit.back_3nurka.business.bike;
 
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;

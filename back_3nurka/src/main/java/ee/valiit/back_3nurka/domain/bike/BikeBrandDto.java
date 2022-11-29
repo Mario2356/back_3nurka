@@ -7,10 +7,10 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link Brand} entity
+ * A DTO for the {@link BikeBrand} entity
  */
 @Data
-public class BrandDto implements Serializable {
+public class BikeBrandDto implements Serializable {
     private final Integer brandId;
     @Size(max = 255)
     @NotNull

@@ -42,8 +42,8 @@ CREATE TABLE bike_status (
                              CONSTRAINT bike_status_pk PRIMARY KEY (id)
 );
 
--- Table: brand
-CREATE TABLE brand (
+-- Table: bikeBrand
+CREATE TABLE bikeBrand (
                        id serial  NOT NULL,
                        name varchar(255)  NOT NULL,
                        is_other boolean  NOT NULL DEFAULT false,
@@ -137,7 +137,7 @@ ALTER TABLE address ADD CONSTRAINT address_district
 -- Reference: bike_brand (table: bike)
 ALTER TABLE bike ADD CONSTRAINT bike_brand
     FOREIGN KEY (brand_id)
-        REFERENCES brand (id)
+        REFERENCES bikeBrand (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;

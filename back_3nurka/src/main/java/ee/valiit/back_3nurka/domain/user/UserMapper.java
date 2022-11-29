@@ -1,6 +1,6 @@
 package ee.valiit.back_3nurka.domain.user;
 
-import ee.valiit.back_3nurka.login.LoginResponse;
+import ee.valiit.back_3nurka.business.login.LoginResponse;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")

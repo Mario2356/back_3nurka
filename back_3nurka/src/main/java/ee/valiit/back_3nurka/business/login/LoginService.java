@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.login;
+package ee.valiit.back_3nurka.business.login;
 
 import ee.valiit.back_3nurka.domain.user.User;
 import ee.valiit.back_3nurka.domain.user.UserMapper;
