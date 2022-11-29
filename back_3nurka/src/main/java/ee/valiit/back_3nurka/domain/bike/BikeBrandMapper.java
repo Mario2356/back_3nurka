@@ -2,17 +2,13 @@ package ee.valiit.back_3nurka.domain.bike;
 
 import org.mapstruct.*;
 
+import java.util.List;
+
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface BikeBrandMapper {
-    @Mapping(source = "brandId", target = "id")
-    @Mapping(source = "brandName", target = "name")
-    @Mapping(source = "brandIsOther", target = "isOther")
-    BikeBrand bikeBrandDtoToBikeBrand(BikeBrandDto bikeBrandDto);
-
-    @InheritInverseConfiguration(name = "bikeBrandDtoToBikeBrand")
-    BikeBrandDto bikeBrandToBikeBrandDto(BikeBrand bikeBrand);
-
-    @InheritConfiguration(name = "bikeBrandDtoToBikeBrand")
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    BikeBrand updateBikeBrandFromBikeBrandDto(BikeBrandDto bikeBrandDto, @MappingTarget BikeBrand bikeBrand);
+    @Mapping(source = "id", target = "brandId")
+    @Mapping(source = "name", target = "brandName")
+    @Mapping(source = "isOther", target = "brandIsOther")
+    BikeBrandDto toBikeBrandDto(BikeBrand bikeBrand);
+    List<BikeBrandDto> toBikeBrandDtos(List<BikeBrand>bikeBrands);
 }
