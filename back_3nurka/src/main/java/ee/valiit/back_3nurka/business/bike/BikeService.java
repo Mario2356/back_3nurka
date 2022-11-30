@@ -17,7 +17,7 @@ public class BikeService {
     @Resource
     private BrandService brandService;
 
-    public List<BrandDto> AllBrands() {
+    public List<BrandDto> getAllBrands() {
         List<Brand> brands = brandService.getAllBrands();
         List<BrandDto> brandDtos = createBrandDtos(brands);
         return brandDtos;
