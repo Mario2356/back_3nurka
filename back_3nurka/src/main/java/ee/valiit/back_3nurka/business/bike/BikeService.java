@@ -1,9 +1,10 @@
 package ee.valiit.back_3nurka.business.bike;
 
 
-import ee.valiit.back_3nurka.domain.bike.BikeBrandDto;
-import ee.valiit.back_3nurka.domain.bike.BikeBrandMapper;
-import ee.valiit.back_3nurka.domain.bike.BikeBrandRepository;
+import ee.valiit.back_3nurka.domain.bike.Brand;
+import ee.valiit.back_3nurka.domain.bike.BrandDto;
+import ee.valiit.back_3nurka.domain.bike.BrandMapper;
+import ee.valiit.back_3nurka.domain.bike.BrandRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,14 +15,21 @@ import java.util.List;
 public class BikeService {
 
     @Resource
-    private BikeBrandRepository bikeBrandRepository;
+    private BrandRepository brandRepository;
 
     @Resource
-    private BikeBrandMapper bikeBrandMapper;
+    private BrandMapper brandMapper;
 
-    private List<BikeBrandDto> getAllBrandNames() {
-        bikeBrandRepository.findAll();
-
-        return null;
+    public List<BrandDto> getAllBrands() {
+        List<Brand> brands = brandRepository.findAll();
+        List<BrandDto> brandDtos = createBrandDtos(brands);
+        return brandDtos;
     }
+
+    private List<BrandDto> createBrandDtos(List<Brand> brands) {
+        List<BrandDto> brandDtos = brandMapper.toBrandDtos(brands);
+        return brandDtos;
+    }
+
+
 }
