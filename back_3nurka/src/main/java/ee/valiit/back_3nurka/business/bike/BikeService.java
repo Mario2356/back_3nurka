@@ -1,7 +1,10 @@
 package ee.valiit.back_3nurka.business.bike;
 
 
-import ee.valiit.back_3nurka.domain.bike.*;
+import ee.valiit.back_3nurka.domain.bike.brand.Brand;
+import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
+import ee.valiit.back_3nurka.domain.bike.brand.BrandMapper;
+import ee.valiit.back_3nurka.domain.bike.brand.BrandService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

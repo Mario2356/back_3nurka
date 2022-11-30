@@ -1,6 +1,6 @@
 package ee.valiit.back_3nurka.business.bike;
 
-import ee.valiit.back_3nurka.domain.bike.BrandDto;
+import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +21,5 @@ public class BikeController {
         List<BrandDto> result = bikeService.getAllBrands();
         return result;
     }
-
 
 }

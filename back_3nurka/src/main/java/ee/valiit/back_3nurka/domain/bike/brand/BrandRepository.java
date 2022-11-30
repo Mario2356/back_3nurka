@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.domain.bike;
+package ee.valiit.back_3nurka.domain.bike.brand;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
