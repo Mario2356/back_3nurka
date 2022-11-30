@@ -14,15 +14,15 @@ INSERT INTO public."user" (id, role_id, email, password) VALUES (DEFAULT, 1, 'ad
 INSERT INTO public."user" (id, role_id, email, password) VALUES (DEFAULT, 2, 'mario', '456');
 INSERT INTO public."user" (id, role_id, email, password) VALUES (DEFAULT, 2, 'leila', '456');
 
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Scott', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Merida', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Trek', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Cannondale', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Kona', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Specialized', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Santa Cruz', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Cervelo', DEFAULT);
-INSERT INTO public.bikeBrand (id, name, is_other) VALUES (DEFAULT, 'Muu', true);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Scott', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Merida', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Trek', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Cannondale', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Kona', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Specialized', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Santa Cruz', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Cervelo', DEFAULT);
+INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Muu', true);
 
 INSERT INTO public.order_status (id, name) VALUES (DEFAULT, 'Ootel');
 INSERT INTO public.order_status (id, name) VALUES (DEFAULT, 'Aktiivne');
