@@ -1,5 +1,6 @@
 package ee.valiit.back_3nurka.domain.user;
 
+import ee.valiit.back_3nurka.domain.customer.Customer;
 import ee.valiit.back_3nurka.domain.role.Role;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,11 @@ public class User {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "customer_id", nullable = true)
+    private Customer customer;
 
     @Size(max = 50)
     @NotNull

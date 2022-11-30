@@ -22,5 +22,6 @@ public class BikeService {
     private List<BikeBrandDto> getAllBrandNames() {
         bikeBrandRepository.findAll();
 
+        return null;
     }
 }
