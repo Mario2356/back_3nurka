@@ -18,7 +18,7 @@ public class BikeController {
     @GetMapping("/order/brand")
     @Operation(summary = "Leiab kõik ratta brändid")
     public List<BrandDto> getAllBrands() {
-        List<BrandDto> result = bikeService.getAllBrands();
+        List<BrandDto> result = bikeService.AllBrands();
         return result;
     }
 
