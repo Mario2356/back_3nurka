@@ -13,7 +13,7 @@ public class RegisterController {
     @Resource
     private RegisterService registerService;
 
-    @PostMapping("/register")
+    @PostMapping("/register/new")
     @Operation(summary = "Registreerib uue kasutaja andmed")
     public RegisterResponse registerNewCustomer(@RequestBody RegisterRequest registerRequest) {
         RegisterResponse response = registerService.registerNewCustomer(registerRequest);
