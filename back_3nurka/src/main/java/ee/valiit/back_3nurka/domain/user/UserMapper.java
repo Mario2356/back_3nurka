@@ -11,7 +11,6 @@ public interface UserMapper {
     @Mapping(source = "role.type", target = "roleType")
     LoginResponse toLoginResponse(User user);
 
-
     User toEntity (RegisterRequest request);
 
 }

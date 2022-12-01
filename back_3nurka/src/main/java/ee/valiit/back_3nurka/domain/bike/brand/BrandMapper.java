@@ -1,5 +1,6 @@
 package ee.valiit.back_3nurka.domain.bike.brand;
 
+import ee.valiit.back_3nurka.business.bike.BikeRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
@@ -15,4 +16,8 @@ public interface BrandMapper {
     BrandDto toBrandDto(Brand brand);
 
     List<BrandDto> toBrandDtos(List<Brand> brands);
+
+
+    @Mapping(source = "brandName", target = "name")
+    Brand brandDtoToBrand(BikeRequest dto);
 }

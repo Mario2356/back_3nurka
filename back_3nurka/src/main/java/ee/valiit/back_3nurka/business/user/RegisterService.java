@@ -27,7 +27,6 @@ public class RegisterService {
     @Resource
     private CustomerService customerService;
 
-
     @Resource
     private UserService userService;
 

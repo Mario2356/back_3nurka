@@ -1,6 +1,5 @@
 package ee.valiit.back_3nurka.business.bike;
 
-import ee.valiit.back_3nurka.domain.bike.BikeDto;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,8 @@ public class BikeOrderController {
 
     @PostMapping("/order/bike")
     @Operation(summary = "Lisab ratta info")
-    public void addBikeInfo(@RequestBody BikeDto request) {
-        bikeOrderService.addBikeInfo(request);
+    public BikeResponse addBikeInfo(@RequestBody BikeRequest bikeRequest) {
+        BikeResponse response = bikeOrderService.addBikeInfo(bikeRequest);
+        return response;
     }
 }
