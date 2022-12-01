@@ -13,8 +13,8 @@ public class UserService {
     @Resource
     private UserRepository userRepository;
 
-    @Resource
-    private BikeRepository bikeRepository;
+//    @Resource
+//    private BikeRepository bikeRepository;
 
     public User getValidUser(String email, String password) {
         Optional<User> userOptional = userRepository.findBy(email, password);
@@ -27,7 +27,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void saveUserBike (Bike bike) {
-        bikeRepository.save(bike);
-    }
+//    public void saveUserBike (Bike bike) {
+//        bikeRepository.save(bike);
+//    }
 }
