@@ -28,17 +28,9 @@ public class UserService {
         userRepository.save(user);
     }
 
-
     public User getBikeUser(Integer userId) {
         Optional<User> byUserId = userRepository.findById(userId);
         User user = byUserId.get();
         return user;
-    }
-
-
-    public void addUserBike (Bike bike) {
-//        bike.setModel(bike.getModel());
-//        bike.setBrand(bike.getBrand().setName());
-        bikeRepository.save(bike);
     }
 }
