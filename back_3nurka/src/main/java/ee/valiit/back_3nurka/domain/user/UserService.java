@@ -5,6 +5,7 @@ import ee.valiit.back_3nurka.validation.Validation;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Optional;
 
 @Service
@@ -27,7 +28,17 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void saveUserBike (Bike bike) {
+
+    public User getBikeUser(Integer userId) {
+        Optional<User> byUserId = userRepository.findById(userId);
+        User user = byUserId.get();
+        return user;
+    }
+
+
+    public void addUserBike (Bike bike) {
+        bike.setModel(bike.getModel());
+        bike.setBrand(bike.getBrand().setName());
         bikeRepository.save(bike);
     }
 }

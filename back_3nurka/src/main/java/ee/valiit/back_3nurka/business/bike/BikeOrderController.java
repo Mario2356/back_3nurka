@@ -25,9 +25,14 @@ public class BikeOrderController {
     }
 
     @PostMapping("/order/bike")
-    @Operation(summary = "Lisab ratta info")
-    public BikeResponse addBikeInfo(@RequestBody BikeRequest bikeRequest) {
-        BikeResponse response = bikeOrderService.addBikeInfo(bikeRequest);
-        return response;
+    @Operation(summary = "Lisab ratta info andmebaasi vastava kasutaja alla")
+    public void addBikeInfo(@RequestBody BikeRequest bikeRequest) {
+        bikeOrderService.addBikeInfo(bikeRequest);
+    }
+
+    @GetMapping("/order/bike")
+    @Operation(summary = "Võtab ratta info andmebaasist tema userId järgi")
+    public BikeResponse getBikeInfo() {
+        return null;
     }
 }
