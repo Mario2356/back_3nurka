@@ -43,12 +43,10 @@ public class BikeOrderService {
     }
 
 
-
     private List<BrandDto> createBrandDtos(List<Brand> brands) {
         List<BrandDto> brandDtos = brandMapper.toBrandDtos(brands);
         return brandDtos;
     }
-
 
 
     public void addBikeInfo(BikeRequest request) {
@@ -62,7 +60,12 @@ public class BikeOrderService {
         bike.setModel(request.getBikeModel());
         bikeService.addBike(bike);
     }
-    public BikeResponse getBikeInfo() {
-        return null;
+
+    public List<BikeResponse> getBikeInfo(Integer userId) {
+        List<BikeResponse> bikesByUserId = bikeService.getBikesByUserId(userId);
+        return bikesByUserId;
+
+
     }
 }
+
