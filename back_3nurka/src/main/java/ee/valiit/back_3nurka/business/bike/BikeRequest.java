@@ -12,13 +12,7 @@ import java.io.Serializable;
  */
 @Data
 public class BikeRequest implements Serializable {
-    private Integer bikeId;
     private Integer brandId;
-    @Size(max = 255)
-    @NotNull
-    private String brandName;
-    @NotNull
-    private Boolean brandIsOther;
     private Integer userId;
     @Size(max = 255)
     private String bikeModel;

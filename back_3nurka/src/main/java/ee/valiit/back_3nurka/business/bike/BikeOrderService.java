@@ -3,6 +3,7 @@ package ee.valiit.back_3nurka.business.bike;
 
 import ee.valiit.back_3nurka.domain.bike.Bike;
 import ee.valiit.back_3nurka.domain.bike.BikeMapper;
+import ee.valiit.back_3nurka.domain.bike.BikeService;
 import ee.valiit.back_3nurka.domain.bike.brand.Brand;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandMapper;
@@ -27,6 +28,10 @@ public class BikeOrderService {
     @Resource
     private UserService userService;
 
+
+    @Resource
+    private BikeService bikeService;
+
     @Resource
     private BikeMapper bikeMapper;
 
@@ -47,8 +52,15 @@ public class BikeOrderService {
 
 
     public void addBikeInfo(BikeRequest request) {
-        User bikeUser = userService.getBikeUser(request.getUserId());
-        userService.addUserBike();
+        User user = userService.getBikeUser(request.getUserId());
+        Brand brand = brandService.getBikeBrand(request.getBrandId());
+
+
+        Bike bike = new Bike();
+        bike.setBrand(brand);
+        bike.setUser(user);
+        bike.setModel(request.getBikeModel());
+        bikeService.addBike(bike);
     }
     public BikeResponse getBikeInfo() {
         return null;

@@ -37,8 +37,8 @@ public class UserService {
 
 
     public void addUserBike (Bike bike) {
-        bike.setModel(bike.getModel());
-        bike.setBrand(bike.getBrand().setName());
+//        bike.setModel(bike.getModel());
+//        bike.setBrand(bike.getBrand().setName());
         bikeRepository.save(bike);
     }
 }
