@@ -27,7 +27,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-//    public void saveUserBike (Bike bike) {
-//        bikeRepository.save(bike);
-//    }
+    public void saveUserBike (Bike bike) {
+        bikeRepository.save(bike);
+    }
 }

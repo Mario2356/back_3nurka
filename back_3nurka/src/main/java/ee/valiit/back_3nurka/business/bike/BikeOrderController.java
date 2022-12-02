@@ -24,10 +24,10 @@ public class BikeOrderController {
         return result;
     }
 
-//    @PostMapping("/order/bike")
-//    @Operation(summary = "Lisab ratta info")
-//    public BikeResponse addBikeInfo(@RequestBody BikeRequest bikeRequest) {
-//        BikeResponse response = bikeOrderService.addBikeInfo(bikeRequest);
-//        return response;
-//    }
+    @PostMapping("/order/bike")
+    @Operation(summary = "Lisab ratta info")
+    public BikeResponse addBikeInfo(@RequestBody BikeRequest bikeRequest) {
+        BikeResponse response = bikeOrderService.addBikeInfo(bikeRequest);
+        return response;
+    }
 }

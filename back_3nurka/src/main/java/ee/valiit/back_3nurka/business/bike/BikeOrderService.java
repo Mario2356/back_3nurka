@@ -41,18 +41,18 @@ public class BikeOrderService {
         return brandDtos;
     }
 
-//    public BikeResponse addBikeInfo(BikeRequest dto) {
-//
-//
-//        Bike bike = bikeMapper.toEntity(dto);
-//        userService.saveUserBike(bike);
-//
-//
-//
-//        BikeResponse response = new BikeResponse();
-//        response.setBikeModel(bike.getModel());
-//        response.setBrandName(bike.getBrand().getName());
-//        return response;
-//
-//    }
+    public BikeResponse addBikeInfo(BikeRequest dto) {
+
+
+        Bike bike = bikeMapper.toEntity(dto);
+        userService.saveUserBike(bike);
+
+
+
+        BikeResponse response = new BikeResponse();
+        response.setBikeModel(bike.getModel());
+        response.setBrandName(bike.getBrand().getName());
+        return response;
+
+    }
 }
