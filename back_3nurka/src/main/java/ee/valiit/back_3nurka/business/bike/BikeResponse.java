@@ -6,4 +6,6 @@ import lombok.Data;
 public class BikeResponse {
     private String brandName;
     private String bikeModel;
+    private Integer bikeId;
+    private Integer brandId;
 }
