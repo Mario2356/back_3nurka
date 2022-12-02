@@ -64,8 +64,12 @@ public class BikeOrderService {
     public List<BikeResponse> getBikeInfo(Integer userId) {
         List<BikeResponse> bikesByUserId = bikeService.getBikesByUserId(userId);
         return bikesByUserId;
+    }
+
+    public void deleteBikeInfo(Integer bikeId) {
+        bikeService.deleteBikeBy(bikeId);
 
 
     }
-}
 
+}
