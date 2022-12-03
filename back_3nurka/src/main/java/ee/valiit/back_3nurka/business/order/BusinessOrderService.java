@@ -16,6 +16,7 @@ import javax.annotation.Resource;
 @Service
 public class BusinessOrderService {
 
+    public OrderResponse getOrderResponse;
     @Resource
     UserService userService;
 
@@ -26,16 +27,16 @@ public class BusinessOrderService {
     OrderService orderService;
 
 
-public void startOrder(Integer userId) {
-    User user = userService.getBikeUser(userId);
-    OrderStatus orderStatus = orderStatusService.getOrderStatus(1);
-    String number = orderService.generateOrderNumber(userId);
+    public Order startOrder(Integer userId) {
+        User user = userService.getBikeUser(userId);
+        OrderStatus orderStatus = orderStatusService.getOrderStatus(1);
+        String number = orderService.generateOrderNumber(userId);
 
-    Order order = new Order();
-    order.setUser(user);
-    order.setStatus(orderStatus);
-    order.setNumber(number);
-    orderService.addOrder(order);
+        Order order = new Order();
+        order.setUser(user);
+        order.setStatus(orderStatus);
+        order.setNumber(number);
+        return orderService.addOrder(order);
 
-}
+    }
 }
