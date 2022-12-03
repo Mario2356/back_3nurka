@@ -4,6 +4,7 @@ package ee.valiit.back_3nurka.domain.order;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -21,4 +22,12 @@ public class OrderService {
         return orderRepository.save(order);
 
     }
+
+    public Order getOrderById(Integer orderId) {
+        Optional<Order> byId = orderRepository.findById(orderId);
+        Order order = byId.get();
+        return order;
+    }
 }
+//    OrderStatus orderStatus = status.get();
+//        return orderStatus;

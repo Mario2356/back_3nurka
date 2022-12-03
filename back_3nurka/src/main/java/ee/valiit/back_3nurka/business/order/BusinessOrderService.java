@@ -1,12 +1,10 @@
 package ee.valiit.back_3nurka.business.order;
 
 
-import ee.valiit.back_3nurka.domain.bike.Bike;
-import ee.valiit.back_3nurka.domain.bike.brand.Brand;
 import ee.valiit.back_3nurka.domain.order.Order;
 import ee.valiit.back_3nurka.domain.order.OrderService;
-import ee.valiit.back_3nurka.domain.orderStatus.OrderStatus;
-import ee.valiit.back_3nurka.domain.orderStatus.OrderStatusService;
+import ee.valiit.back_3nurka.domain.order_status.OrderStatus;
+import ee.valiit.back_3nurka.domain.order_status.OrderStatusService;
 import ee.valiit.back_3nurka.domain.user.User;
 import ee.valiit.back_3nurka.domain.user.UserService;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.domain.orderStatus;
+package ee.valiit.back_3nurka.domain.order_status;
 
 import lombok.Getter;
 import lombok.Setter;

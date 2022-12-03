@@ -1,7 +1,7 @@
 package ee.valiit.back_3nurka.domain.order;
 
 import ee.valiit.back_3nurka.domain.customer.Address;
-import ee.valiit.back_3nurka.domain.orderStatus.OrderStatus;
+import ee.valiit.back_3nurka.domain.order_status.OrderStatus;
 import ee.valiit.back_3nurka.domain.user.User;
 import lombok.Getter;
 import lombok.Setter;

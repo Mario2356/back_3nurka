@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BikeService {
@@ -30,4 +31,9 @@ public class BikeService {
         bikeRepository.deleteById(bikeId);
     }
 
+    public Bike getBikeById(Integer bikeId) {
+        Optional<Bike> byId = bikeRepository.findById(bikeId);
+        Bike bike = byId.get();
+        return bike;
+    }
 }

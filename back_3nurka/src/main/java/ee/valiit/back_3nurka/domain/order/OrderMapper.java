@@ -10,7 +10,6 @@ public interface OrderMapper {
     @Mapping(source = "status.id", target = "orderStatusId")
     @Mapping(source = "status.name", target = "orderStatusName")
     @Mapping(source = "address.id", target = "addressId")
-    @Mapping(source = "address.streetName", target = "addressStreetName")
     OrderResponse toOrderResponse(Order order);
 
 }

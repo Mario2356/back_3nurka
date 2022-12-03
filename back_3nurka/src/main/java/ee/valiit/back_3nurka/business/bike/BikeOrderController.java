@@ -40,4 +40,11 @@ public class BikeOrderController {
         bikeOrderService.deleteBikeInfo(bikeId);
     }
 
+    @PostMapping("/repair/bikeorder")
+    @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
+    public void addBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
+        bikeOrderService.addBikeOrder(bikeOrderRequest);
+    }
+
+
  }
