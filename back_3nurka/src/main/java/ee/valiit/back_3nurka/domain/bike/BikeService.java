@@ -26,4 +26,8 @@ public class BikeService {
         return bikeResponses;
 
     }
+    public void deleteBikeBy(Integer bikeId) {
+        bikeRepository.deleteById(bikeId);
+    }
+
 }

@@ -33,4 +33,11 @@ public class BikeOrderController {
         List<BikeResponse> bikeInfo = bikeOrderService.getBikeInfo(userId);
         return bikeInfo;
     }
+
+    @DeleteMapping("/order/bike")
+    @Operation(summary = "Kustutab kliendi ratta bikeId järgi")
+    public void deleteBikeInfo(@RequestParam Integer bikeId) {
+        bikeOrderService.deleteBikeInfo(bikeId);
+    }
+
  }
