@@ -7,6 +7,7 @@ CREATE TABLE address (
                          id serial  NOT NULL,
                          district_id int  NOT NULL,
                          street_name varchar(50)  NOT NULL,
+                         phone varchar(50) NOT NULL,
                          CONSTRAINT address_pk PRIMARY KEY (id)
 );
 

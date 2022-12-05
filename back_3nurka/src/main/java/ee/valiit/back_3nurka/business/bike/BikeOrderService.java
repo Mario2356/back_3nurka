@@ -102,7 +102,6 @@ public class BikeOrderService {
         BikeOrder bikeOrder = bikeOrderMapper.ToBikeOrder(bikeOrderRequest);
         Order order = orderService.getOrderById(bikeOrderRequest.getOrderId());
         Bike bike = bikeService.getBikeById(bikeOrderRequest.getBikeId());
-        // TODO: 03.12.2022 WorkType peab Frondist sisse tulema
         WorkType workType = workTypeService.getWorkType(bikeOrderRequest.getWorkTypeId());
         BikeStatus bikeStatus = bikeStatusService.getBikeStatus(1);
         PackageField packageField = packageFieldService.getPackageField(bikeOrderRequest.getPackageFieldId());
