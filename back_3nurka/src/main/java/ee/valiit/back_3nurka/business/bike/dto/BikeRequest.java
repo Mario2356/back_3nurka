@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.business.bike;
+package ee.valiit.back_3nurka.business.bike.dto;
 
 import ee.valiit.back_3nurka.domain.bike.Bike;
 import lombok.Data;

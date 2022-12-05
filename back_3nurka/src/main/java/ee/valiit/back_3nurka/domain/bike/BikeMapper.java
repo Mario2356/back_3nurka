@@ -1,9 +1,6 @@
 package ee.valiit.back_3nurka.domain.bike;
 
-import ee.valiit.back_3nurka.business.bike.BikeResponse;
-import ee.valiit.back_3nurka.business.login.LoginResponse;
-import ee.valiit.back_3nurka.domain.bike.brand.Brand;
-import ee.valiit.back_3nurka.domain.user.User;
+import ee.valiit.back_3nurka.business.bike.dto.BikeResponse;
 import org.mapstruct.*;
 
 import java.util.List;

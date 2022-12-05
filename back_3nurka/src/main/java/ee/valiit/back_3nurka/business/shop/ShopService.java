@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.business.order;
+package ee.valiit.back_3nurka.business.shop;
 
 
 import ee.valiit.back_3nurka.domain.order.Order;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service
-public class BusinessOrderService {
+public class ShopService {
 
     public OrderResponse getOrderResponse;
     @Resource

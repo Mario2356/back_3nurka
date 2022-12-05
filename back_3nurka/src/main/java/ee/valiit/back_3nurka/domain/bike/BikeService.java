@@ -1,6 +1,6 @@
 package ee.valiit.back_3nurka.domain.bike;
 
-import ee.valiit.back_3nurka.business.bike.BikeResponse;
+import ee.valiit.back_3nurka.business.bike.dto.BikeResponse;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

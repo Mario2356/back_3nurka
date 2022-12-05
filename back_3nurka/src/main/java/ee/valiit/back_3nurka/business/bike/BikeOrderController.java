@@ -1,5 +1,9 @@
 package ee.valiit.back_3nurka.business.bike;
 
+import ee.valiit.back_3nurka.business.bike.dto.BikeOrderRequest;
+import ee.valiit.back_3nurka.business.bike.dto.BikeRequest;
+import ee.valiit.back_3nurka.business.bike.dto.BikeResponse;
+import ee.valiit.back_3nurka.business.bike.dto.OrderInfo;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
@@ -42,8 +46,31 @@ public class BikeOrderController {
 
     @PostMapping("/repair/bikeorder")
     @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
-    public void addBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
+    public void addRepairBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
+        bikeOrderRequest.setDateTo(bikeOrderRequest.getDateFrom());
+        bikeOrderRequest.setPackageFieldId(0);
         bikeOrderService.addBikeOrder(bikeOrderRequest);
+    }
+
+    @PostMapping("/maintenance/bikeorder")
+    @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
+    public void addMaintenanceBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
+        bikeOrderRequest.setDateTo(bikeOrderRequest.getDateFrom());
+        bikeOrderService.addBikeOrder(bikeOrderRequest);
+    }
+
+    @PostMapping("/storage/bikeorder")
+    @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
+    public void addStorageBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
+        bikeOrderService.addBikeOrder(bikeOrderRequest);
+    }
+
+
+
+    @GetMapping("/order/info")
+    @Operation(summary = "Toob OrderId järgi kõik BikeOrderid ja OrderId numbri")
+    public OrderInfo getBikeOrderInfo(@RequestParam Integer orderId) {
+        return bikeOrderService.getBikeOrderInfo(orderId);
     }
 
 

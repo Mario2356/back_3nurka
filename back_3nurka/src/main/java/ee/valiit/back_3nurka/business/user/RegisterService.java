@@ -1,5 +1,7 @@
 package ee.valiit.back_3nurka.business.user;
 
+import ee.valiit.back_3nurka.business.user.dto.RegisterRequest;
+import ee.valiit.back_3nurka.business.user.dto.RegisterResponse;
 import ee.valiit.back_3nurka.domain.customer.Customer;
 import ee.valiit.back_3nurka.domain.customer.CustomerService;
 import ee.valiit.back_3nurka.domain.customer.CustomerMapper;

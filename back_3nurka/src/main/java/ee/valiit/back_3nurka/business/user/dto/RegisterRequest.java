@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.business.user;
+package ee.valiit.back_3nurka.business.user.dto;
 
 import ee.valiit.back_3nurka.domain.user.User;
 import lombok.Data;

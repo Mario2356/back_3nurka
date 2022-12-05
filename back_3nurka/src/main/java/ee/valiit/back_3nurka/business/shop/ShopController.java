@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.business.order;
+package ee.valiit.back_3nurka.business.shop;
 
 import ee.valiit.back_3nurka.domain.order.Order;
 import ee.valiit.back_3nurka.domain.order.OrderMapper;
@@ -10,20 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-public class OrderController {
+public class ShopController {
 
     @Resource
     private OrderMapper orderMapper;
 
     @Resource
-    private BusinessOrderService businessOrderService;
+    private ShopService shopService;
 
 
     @PostMapping ("/order/start")
     @Operation(summary = "Alustab uue userId-ga seotud Orderi, staatus Ootel")
     public OrderResponse startOrder(@RequestParam Integer userId) {
-        Order order = businessOrderService.startOrder(userId);
+        Order order = shopService.startOrder(userId);
         return orderMapper.toOrderResponse(order);
-    };
+    }
+
+
 
 }

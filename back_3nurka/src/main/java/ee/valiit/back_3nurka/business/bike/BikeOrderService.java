@@ -1,6 +1,7 @@
 package ee.valiit.back_3nurka.business.bike;
 
 
+import ee.valiit.back_3nurka.business.bike.dto.*;
 import ee.valiit.back_3nurka.domain.bike.Bike;
 import ee.valiit.back_3nurka.domain.bike.BikeMapper;
 import ee.valiit.back_3nurka.domain.bike.BikeService;
@@ -24,6 +25,8 @@ import ee.valiit.back_3nurka.domain.work_type.WorkTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Service
@@ -99,7 +102,7 @@ public class BikeOrderService {
         bikeService.deleteBikeBy(bikeId);
     }
     public void addBikeOrder(BikeOrderRequest bikeOrderRequest) {
-        BikeOrder bikeOrder = bikeOrderMapper.ToBikeOrder(bikeOrderRequest);
+        BikeOrder bikeOrder = bikeOrderMapper.toBikeOrder(bikeOrderRequest);
         Order order = orderService.getOrderById(bikeOrderRequest.getOrderId());
         Bike bike = bikeService.getBikeById(bikeOrderRequest.getBikeId());
         WorkType workType = workTypeService.getWorkType(bikeOrderRequest.getWorkTypeId());
@@ -118,4 +121,41 @@ public class BikeOrderService {
 
 
     }
+
+    public OrderInfo getBikeOrderInfo(Integer orderId) {
+
+        Order orderById = orderService.getOrderById(orderId);
+
+
+        List<BikeOrder> bikeOrdersBy = bikeOrderDomService.findBikeOrdersBy(orderId);
+        List<BikeOrderDto> bikeOrderDtos = bikeOrderMapper.toBikeOrderDtos(bikeOrdersBy);
+        // TODO: 05.12.2022  Leia orderId järgi order objekt, võta order nr.
+        // TODO: 05.12.2022  Leia orderId järgi bikeOrder listi
+        OrderInfo orderInfo = new OrderInfo();
+
+
+        orderInfo.setOrderNumber(orderById.getNumber());
+
+        orderInfo.setBikeOrders(bikeOrderDtos);
+
+
+        return orderInfo;
+    }
 }
+
+//    private Integer bikeOrderId;
+//    @Size(max = 255)
+//    @NotNull
+//    private String bikeBrandName;
+//    @Size(max = 255)
+//    private String bikeModel;
+//    @Size(max = 255)
+//    @NotNull
+//    private String workTypeName;
+//    @Size(max = 255)
+//    @NotNull
+//    private String packageFieldName;
+//    @NotNull
+//    private Integer packageFieldPrice;
+//    @Size(max = 1000)
+//    private String customerComment;

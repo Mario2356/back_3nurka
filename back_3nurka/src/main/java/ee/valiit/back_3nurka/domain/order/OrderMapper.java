@@ -1,6 +1,6 @@
 package ee.valiit.back_3nurka.domain.order;
 
-import ee.valiit.back_3nurka.business.order.OrderResponse;
+import ee.valiit.back_3nurka.business.shop.OrderResponse;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")

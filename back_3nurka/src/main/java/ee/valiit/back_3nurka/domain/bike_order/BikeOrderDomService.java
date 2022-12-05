@@ -4,6 +4,7 @@ package ee.valiit.back_3nurka.domain.bike_order;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class BikeOrderDomService {
@@ -14,4 +15,9 @@ public class BikeOrderDomService {
         bikeOrderRepository.save(bikeOrder);
 
     }
+
+public List<BikeOrder> findBikeOrdersBy(Integer orderId) {
+    List<BikeOrder> entities = bikeOrderRepository.findByOrder(orderId);
+    return entities;
+}
 }

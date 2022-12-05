@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.business.order;
+package ee.valiit.back_3nurka.business.shop;
 
 import ee.valiit.back_3nurka.domain.order.Order;
 import lombok.Data;

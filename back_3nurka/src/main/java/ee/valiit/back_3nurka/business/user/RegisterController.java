@@ -1,5 +1,7 @@
 package ee.valiit.back_3nurka.business.user;
 
+import ee.valiit.back_3nurka.business.user.dto.RegisterRequest;
+import ee.valiit.back_3nurka.business.user.dto.RegisterResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

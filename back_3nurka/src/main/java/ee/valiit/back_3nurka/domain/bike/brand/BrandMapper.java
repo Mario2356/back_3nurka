@@ -1,7 +1,5 @@
 package ee.valiit.back_3nurka.domain.bike.brand;
 
-import ee.valiit.back_3nurka.business.bike.BikeRequest;
-import ee.valiit.back_3nurka.domain.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
