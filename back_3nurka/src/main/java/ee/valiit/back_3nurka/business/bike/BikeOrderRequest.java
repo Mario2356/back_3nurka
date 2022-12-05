@@ -13,14 +13,14 @@ import java.time.LocalDate;
  */
 @Data
 public class BikeOrderRequest implements Serializable {
-    private final Integer orderId;
-    private final Integer bikeId;
-    private final Integer workTypeId;
-    private final Integer bikeStatusId;
-    private final Integer packageFieldId;
+    private  Integer orderId;
+    private  Integer bikeId;
+    private  Integer workTypeId;
+    private  Integer bikeStatusId;
+    private  Integer packageFieldId;
     @NotNull
-    private final LocalDate dateFrom;
-    private final LocalDate dateTo;
+    private  LocalDate dateFrom;
+    private  LocalDate dateTo;
     @Size(max = 1000)
-    private final String customerComment;
+    private  String customerComment;
 }

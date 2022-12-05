@@ -16,7 +16,10 @@ public class PackageFieldService {
 
     public PackageField getPackageField(Integer packageId) {
         Optional<PackageField> byId = packageFieldRepository.findById(packageId);
-        PackageField packageField = byId.get();
-        return packageField;
+        if (byId.isPresent()) {
+            return byId.get();
+        }
+        else
+            return null;
     }
 }
