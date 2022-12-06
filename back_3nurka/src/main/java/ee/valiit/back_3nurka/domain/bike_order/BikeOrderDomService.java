@@ -20,4 +20,9 @@ public List<BikeOrder> findBikeOrdersBy(Integer orderId) {
     List<BikeOrder> entities = bikeOrderRepository.findByOrder(orderId);
     return entities;
 }
+
+public List<BikeOrder> findAllOrders() {
+    List<BikeOrder> orders = bikeOrderRepository.findAll();
+    return orders;
+}
 }
