@@ -4,8 +4,6 @@ import ee.valiit.back_3nurka.business.bike.dto.BikeOrderDto;
 import ee.valiit.back_3nurka.business.bike.dto.BikeOrderRequest;
 import org.mapstruct.*;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
@@ -23,6 +21,29 @@ public interface BikeOrderMapper {
     BikeOrderDto toBikeOrderDto (BikeOrder bikeOrder);
 
     List<BikeOrderDto> toBikeOrderDtos(List<BikeOrder> bikeOrders);
+
+
+//
+//    @Mapping(source = "orderId", target = "order.id")
+//    @Mapping(source = "orderUserCustomerFirstName", target = "customer.firstName")
+//    @Mapping(source = "orderUserCustomerLastName", target = "customer.lastName")
+//    @Mapping(source = "orderUserEmail", target = "user.email")
+//    @Mapping(source = "orderStatusName", target = "status.name")
+//    @Mapping(source = "orderAddressStreetName", target = "address.streetName")
+//    @Mapping(source = "orderNumber", target = "order.number")
+//    @Mapping(source = "bikeBrandName", target = "brand.name")
+//    @Mapping(source = "bikeModel", target = "bike.model")
+//    @Mapping(source = "workTypeName", target = "workType.name")
+//    @Mapping(source = "bikeStatusName", target = "bikeStatus.name")
+//    @Mapping(source = "packageFieldName", target = "packageField.name")
+//    @Mapping(source = "packageFieldPrice", target = "packageField.price")
+//    BikeOrderDto toAdminBikeOrderDto(BikeOrder bikeOrder);
+
+
+
+
+
+
 
 }
 
