@@ -1,5 +1,6 @@
 package ee.valiit.back_3nurka.domain.customer;
 
+import ee.valiit.back_3nurka.domain.address.Address;
 import lombok.Getter;
 import lombok.Setter;
 
