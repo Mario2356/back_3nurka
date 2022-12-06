@@ -3,11 +3,13 @@ package ee.valiit.back_3nurka.business.shop;
 import ee.valiit.back_3nurka.domain.order.Order;
 import ee.valiit.back_3nurka.domain.order.OrderMapper;
 import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class ShopController {
@@ -26,6 +28,11 @@ public class ShopController {
         return orderMapper.toOrderResponse(order);
     }
 
-
+@GetMapping ("/admin/orders")
+    @Operation(summary = "Toob kõikide Orderite andmed Admin tabelisse")
+    public List<AdminOrderRequest> getAllOrders() {
+    List<AdminOrderRequest> adminAllOrders = shopService.getAdminAllOrders();
+    return adminAllOrders;
+}
 
 }

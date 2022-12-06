@@ -2,6 +2,7 @@ package ee.valiit.back_3nurka.business.bike;
 
 
 import ee.valiit.back_3nurka.business.bike.dto.*;
+import ee.valiit.back_3nurka.business.shop.AdminOrderRequest;
 import ee.valiit.back_3nurka.domain.bike.Bike;
 import ee.valiit.back_3nurka.domain.bike.BikeMapper;
 import ee.valiit.back_3nurka.domain.bike.BikeService;
@@ -126,21 +127,16 @@ public class BikeOrderService {
 
         Order orderById = orderService.getOrderById(orderId);
 
-
         List<BikeOrder> bikeOrdersBy = bikeOrderDomService.findBikeOrdersBy(orderId);
         List<BikeOrderDto> bikeOrderDtos = bikeOrderMapper.toBikeOrderDtos(bikeOrdersBy);
-        // TODO: 05.12.2022  Leia orderId järgi order objekt, võta order nr.
-        // TODO: 05.12.2022  Leia orderId järgi bikeOrder listi
         OrderInfo orderInfo = new OrderInfo();
 
-
         orderInfo.setOrderNumber(orderById.getNumber());
-
         orderInfo.setBikeOrders(bikeOrderDtos);
-
-
         return orderInfo;
     }
+
+
 }
 
 //    private Integer bikeOrderId;
