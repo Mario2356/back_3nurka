@@ -2,9 +2,7 @@ package ee.valiit.back_3nurka.business.bike;
 
 
 import ee.valiit.back_3nurka.business.bike.dto.*;
-import ee.valiit.back_3nurka.business.shop.AdminOrderRequest;
 import ee.valiit.back_3nurka.domain.bike.Bike;
-import ee.valiit.back_3nurka.domain.bike.BikeMapper;
 import ee.valiit.back_3nurka.domain.bike.BikeService;
 import ee.valiit.back_3nurka.domain.bike.brand.Brand;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
@@ -26,8 +24,6 @@ import ee.valiit.back_3nurka.domain.work_type.WorkTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 @Service
@@ -46,9 +42,6 @@ public class BikeOrderService {
 
     @Resource
     private BikeService bikeService;
-
-    @Resource
-    private BikeMapper bikeMapper;
 
     @Resource
     private BikeOrderMapper bikeOrderMapper;
@@ -83,7 +76,7 @@ public class BikeOrderService {
 
 
     public void addBikeInfo(BikeRequest request) {
-        User user = userService.getBikeUser(request.getUserId());
+        User user = userService.getUser(request.getUserId());
         Brand brand = brandService.getBikeBrand(request.getBrandId());
 
 
@@ -102,6 +95,7 @@ public class BikeOrderService {
     public void deleteBikeInfo(Integer bikeId) {
         bikeService.deleteBikeBy(bikeId);
     }
+
     public void addBikeOrder(BikeOrderRequest bikeOrderRequest) {
         BikeOrder bikeOrder = bikeOrderMapper.toBikeOrder(bikeOrderRequest);
         Order order = orderService.getOrderById(bikeOrderRequest.getOrderId());
@@ -118,9 +112,6 @@ public class BikeOrderService {
 
         bikeOrderDomService.addBikeOrder(bikeOrder);
 
-
-
-
     }
 
     public OrderInfo getBikeOrderInfo(Integer orderId) {
@@ -135,23 +126,4 @@ public class BikeOrderService {
         orderInfo.setBikeOrders(bikeOrderDtos);
         return orderInfo;
     }
-
-
 }
-
-//    private Integer bikeOrderId;
-//    @Size(max = 255)
-//    @NotNull
-//    private String bikeBrandName;
-//    @Size(max = 255)
-//    private String bikeModel;
-//    @Size(max = 255)
-//    @NotNull
-//    private String workTypeName;
-//    @Size(max = 255)
-//    @NotNull
-//    private String packageFieldName;
-//    @NotNull
-//    private Integer packageFieldPrice;
-//    @Size(max = 1000)
-//    private String customerComment;

@@ -1,8 +1,11 @@
 package ee.valiit.back_3nurka.domain.user;
 
+import ee.valiit.back_3nurka.business.location.LocationResponse;
 import ee.valiit.back_3nurka.business.login.LoginResponse;
 import ee.valiit.back_3nurka.business.user.dto.RegisterRequest;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface UserMapper {
@@ -12,6 +15,13 @@ public interface UserMapper {
     @Mapping(source = "role.type", target = "roleType")
     LoginResponse toLoginResponse(User user);
 
-    User toEntity (RegisterRequest request);
+    User toEntity(RegisterRequest request);
 
+    @Mapping(source = "customer.address.id", target = "addressId")
+    @Mapping(source = "customer.address.district.id", target = "districtId")
+    @Mapping(source = "customer.address.district.name", target = "districtName")
+    @Mapping(source = "customer.address.streetName", target = "streetName")
+    @Mapping(source = "customer.address.phone", target = "phone")
+    LocationResponse toLocationResponse(User user);
 }
+

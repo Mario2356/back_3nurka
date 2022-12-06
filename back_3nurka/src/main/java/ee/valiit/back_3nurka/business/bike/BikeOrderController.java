@@ -66,7 +66,6 @@ public class BikeOrderController {
     }
 
 
-
     @GetMapping("/order/info")
     @Operation(summary = "Toob OrderId järgi kõik BikeOrderid ja OrderId numbri")
     public OrderInfo getBikeOrderInfo(@RequestParam Integer orderId) {

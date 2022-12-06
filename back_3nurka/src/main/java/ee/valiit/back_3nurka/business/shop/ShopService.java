@@ -36,7 +36,7 @@ public class ShopService {
 
 
     public Order startOrder(Integer userId) {
-        User user = userService.getBikeUser(userId);
+        User user = userService.getUser(userId);
         OrderStatus orderStatus = orderStatusService.getOrderStatus(1);
         String number = orderService.generateOrderNumber(userId);
 
