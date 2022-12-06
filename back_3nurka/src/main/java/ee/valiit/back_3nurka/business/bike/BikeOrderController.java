@@ -48,7 +48,7 @@ public class BikeOrderController {
     @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
     public void addRepairBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
         bikeOrderRequest.setDateTo(bikeOrderRequest.getDateFrom());
-        bikeOrderRequest.setPackageFieldId(0);
+        bikeOrderRequest.setPackageFieldId(1);
         bikeOrderService.addBikeOrder(bikeOrderRequest);
     }
 

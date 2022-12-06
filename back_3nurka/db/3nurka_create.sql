@@ -27,7 +27,7 @@ CREATE TABLE bike_order (
                             bike_id int  NOT NULL,
                             work_type_id int  NOT NULL,
                             bike_status_id int  NOT NULL,
-                            package_id int  NULL,
+                            package_id int  NOT NULL,
                             date_from date  NOT NULL,
                             date_to date  NULL,
                             tech_comment varchar(1000)  NULL,

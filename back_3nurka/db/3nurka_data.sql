@@ -36,12 +36,14 @@ INSERT INTO public.work_type (id, name) VALUES (DEFAULT, 'Hoiustamine');
 INSERT INTO public.bike_status (id, name) VALUES (DEFAULT, 'Aktiivne teenus');
 INSERT INTO public.bike_status (id, name) VALUES (DEFAULT, 'Lõpetatud teenus');
 
+INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 1, 'Remondi hind', 5);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 2, 'Kevadine rattahooldus', 30);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 2, 'Sügisene rattahooldus', 40);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 2, 'Pakett - käigud, kett ja pidurid', 30);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '1 kuu', 10);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '3 kuud', 20);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '6 kuud ', 30);
+
 
 
 
