@@ -22,13 +22,15 @@ public class BikeService {
     }
 
     public List<BikeResponse> getBikesByUserId(Integer userId) {
-        List<Bike> bikes = bikeRepository.findBikeBy(userId);
+        List<Bike> bikes = bikeRepository.findBikeBy(userId, "A");
         List<BikeResponse> bikeResponses = bikeMapper.toBikeResponses(bikes);
         return bikeResponses;
 
     }
     public void deleteBikeBy(Integer bikeId) {
-        bikeRepository.deleteById(bikeId);
+        Bike bike = bikeRepository.findById(bikeId).get();
+        bike.setStatus("D");
+        bikeRepository.save(bike);
     }
 
     public Bike getBikeById(Integer bikeId) {

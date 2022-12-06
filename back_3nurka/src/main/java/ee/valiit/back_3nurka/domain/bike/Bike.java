@@ -33,4 +33,9 @@ public class Bike {
     @Column(name = "model")
     private String model;
 
+    @Size(max = 1)
+    @NotNull
+    @Column(name = "status", nullable = false, length = 1)
+    private String status;
+
 }

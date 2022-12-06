@@ -29,7 +29,7 @@ public class BikeOrderController {
     }
 
     @GetMapping("/order/bike")
-    @Operation(summary = "Võtab ratta info andmebaasist tema userId järgi")
+    @Operation(summary = "Võtab kõik rattad andmebaasist tema userId järgi")
     public List<BikeResponse> getBikeInfo(@RequestParam Integer userId) {
         List<BikeResponse> bikeInfo = bikeOrderService.getBikeInfo(userId);
         return bikeInfo;

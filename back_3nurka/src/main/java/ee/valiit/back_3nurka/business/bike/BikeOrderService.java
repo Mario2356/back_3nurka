@@ -25,8 +25,6 @@ import ee.valiit.back_3nurka.domain.work_type.WorkTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.List;
 
 @Service
@@ -90,6 +88,7 @@ public class BikeOrderService {
         bike.setBrand(brand);
         bike.setUser(user);
         bike.setModel(request.getBikeModel());
+        bike.setStatus("A");
         bikeService.addBike(bike);
     }
 
@@ -121,15 +120,13 @@ public class BikeOrderService {
     }
 
     public OrderInfo getBikeOrderInfo(Integer orderId) {
-
         Order orderById = orderService.getOrderById(orderId);
-
         List<BikeOrder> bikeOrdersBy = bikeOrderDomService.findBikeOrdersBy(orderId);
         List<BikeOrderDto> bikeOrderDtos = bikeOrderMapper.toBikeOrderDtos(bikeOrdersBy);
         OrderInfo orderInfo = new OrderInfo();
-
         orderInfo.setOrderNumber(orderById.getNumber());
         orderInfo.setBikeOrders(bikeOrderDtos);
+        orderInfo.setTotalPrice(calculateTotalPrice(bikeOrderDtos));
         return orderInfo;
     }
 
@@ -138,5 +135,14 @@ public class BikeOrderService {
         AdminBikeOrderRequest adminBikeOrderRequest = bikeOrderMapper.toAdminBikeOrderDto(entity);
         return adminBikeOrderRequest;
 
+    }
+
+    private static Integer calculateTotalPrice(List<BikeOrderDto> bikeOrderDtos) {
+        Integer totalPrice = 0;
+        for (BikeOrderDto dto : bikeOrderDtos) {
+            Integer price = dto.getPackageFieldPrice();
+            totalPrice = totalPrice + price;
+        }
+        return totalPrice;
     }
 }

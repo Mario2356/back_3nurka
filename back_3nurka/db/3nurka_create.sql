@@ -17,6 +17,7 @@ CREATE TABLE bike (
                       brand_id int  NOT NULL,
                       user_id int  NOT NULL,
                       model varchar(255)  NULL,
+                      status varchar(1) NOT NULL,
                       CONSTRAINT bike_pk PRIMARY KEY (id)
 );
 
