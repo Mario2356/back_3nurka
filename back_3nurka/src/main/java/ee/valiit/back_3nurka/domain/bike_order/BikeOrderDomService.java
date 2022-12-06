@@ -11,13 +11,17 @@ public class BikeOrderDomService {
 
     @Resource
     BikeOrderRepository bikeOrderRepository;
+
     public void addBikeOrder(BikeOrder bikeOrder) {
         bikeOrderRepository.save(bikeOrder);
 
     }
 
-public List<BikeOrder> findBikeOrdersBy(Integer orderId) {
-    List<BikeOrder> entities = bikeOrderRepository.findByOrder(orderId);
-    return entities;
-}
+    public List<BikeOrder> findBikeOrdersBy(Integer orderId) {
+        List<BikeOrder> entities = bikeOrderRepository.findByOrder(orderId);
+        return entities;
+    }
+
+
+
 }
