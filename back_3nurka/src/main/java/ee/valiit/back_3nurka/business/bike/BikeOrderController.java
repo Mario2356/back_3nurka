@@ -1,9 +1,6 @@
 package ee.valiit.back_3nurka.business.bike;
 
-import ee.valiit.back_3nurka.business.bike.dto.BikeOrderRequest;
-import ee.valiit.back_3nurka.business.bike.dto.BikeRequest;
-import ee.valiit.back_3nurka.business.bike.dto.BikeResponse;
-import ee.valiit.back_3nurka.business.bike.dto.OrderInfo;
+import ee.valiit.back_3nurka.business.bike.dto.*;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
@@ -72,5 +69,12 @@ public class BikeOrderController {
         return bikeOrderService.getBikeOrderInfo(orderId);
     }
 
+    @GetMapping("info/by-order")
+    @Operation(summary = "Toob bikeOrderId järgi ühe bikeOrderi")
+    public AdminBikeOrderRequest findBikeOrderById(@RequestParam Integer bikeOrderId) {
+        AdminBikeOrderRequest bikeOrderBy = bikeOrderService.findBikeOrderBy(bikeOrderId);
+        return bikeOrderBy;
+
+    }
 
  }

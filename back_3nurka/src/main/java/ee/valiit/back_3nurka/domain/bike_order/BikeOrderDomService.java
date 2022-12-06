@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BikeOrderDomService {
@@ -25,4 +26,12 @@ public List<BikeOrder> findAllOrders() {
     List<BikeOrder> orders = bikeOrderRepository.findAll();
     return orders;
 }
+
+    public BikeOrder findBikeOrderById(Integer bikeOrderId) {
+        Optional<BikeOrder> byId = bikeOrderRepository.findById(bikeOrderId);
+        BikeOrder bikeOrder = byId.get();
+        return bikeOrder;
+    }
+
 }
+

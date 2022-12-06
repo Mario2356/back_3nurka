@@ -3,6 +3,7 @@ package ee.valiit.back_3nurka.business.bike;
 
 import ee.valiit.back_3nurka.business.bike.dto.*;
 import ee.valiit.back_3nurka.domain.bike.Bike;
+import ee.valiit.back_3nurka.domain.bike.BikeMapper;
 import ee.valiit.back_3nurka.domain.bike.BikeService;
 import ee.valiit.back_3nurka.domain.bike.brand.Brand;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
@@ -24,6 +25,8 @@ import ee.valiit.back_3nurka.domain.work_type.WorkTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Service
@@ -42,6 +45,9 @@ public class BikeOrderService {
 
     @Resource
     private BikeService bikeService;
+
+    @Resource
+    private BikeMapper bikeMapper;
 
     @Resource
     private BikeOrderMapper bikeOrderMapper;
@@ -125,5 +131,12 @@ public class BikeOrderService {
         orderInfo.setOrderNumber(orderById.getNumber());
         orderInfo.setBikeOrders(bikeOrderDtos);
         return orderInfo;
+    }
+
+    public AdminBikeOrderRequest findBikeOrderBy(Integer bikeOrderId) {
+        BikeOrder entity = bikeOrderDomService.findBikeOrderById(bikeOrderId);
+        AdminBikeOrderRequest adminBikeOrderRequest = bikeOrderMapper.toAdminBikeOrderDto(entity);
+        return adminBikeOrderRequest;
+
     }
 }

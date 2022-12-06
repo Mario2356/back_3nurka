@@ -1,5 +1,6 @@
 package ee.valiit.back_3nurka.domain.bike_order;
 
+import ee.valiit.back_3nurka.business.bike.dto.AdminBikeOrderRequest;
 import ee.valiit.back_3nurka.business.bike.dto.BikeOrderDto;
 import ee.valiit.back_3nurka.business.bike.dto.BikeOrderRequest;
 import ee.valiit.back_3nurka.business.shop.AdminOrderRequest;
@@ -43,6 +44,23 @@ public interface BikeOrderMapper {
     AdminOrderRequest toAdminOrderDto(BikeOrder bikeOrder);
 
     List<AdminOrderRequest> toAdminOrderDtos(List<BikeOrder> bikeOrders);
+
+
+    @Mapping(source = "order.id", target = "orderId")
+    @Mapping(source = "order.user.customer.firstName", target = "firstName")
+    @Mapping(source = "order.user.customer.lastName", target = "lastName")
+    @Mapping(source = "order.user.email", target = "email")
+    @Mapping(source = "order.status.name", target = "orderStatus")
+    @Mapping(source = "order.address.streetName", target = "orderAddress")
+    @Mapping(source = "order.address.district.name", target = "orderDistrict")
+    @Mapping(source = "order.number", target = "orderNumber")
+    @Mapping(source = "bike.brand.name", target = "bikeBrandName")
+    @Mapping(source = "bike.model", target = "bikeModel")
+    @Mapping(source = "workType.name", target = "workType")
+    @Mapping(source = "bikeStatus.name", target = "bikeStatus")
+    @Mapping(source = "packageField.name", target = "packageFieldName")
+    @Mapping(source = "packageField.price", target = "packageFieldPrice")
+    AdminBikeOrderRequest toAdminBikeOrderDto(BikeOrder bikeOrder);
 
 }
 
