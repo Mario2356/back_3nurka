@@ -1,5 +1,6 @@
-package ee.valiit.back_3nurka.domain.package_field;
+package ee.valiit.back_3nurka.business.bike.dto;
 
+import ee.valiit.back_3nurka.domain.package_field.PackageField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

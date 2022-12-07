@@ -1,5 +1,6 @@
 package ee.valiit.back_3nurka.domain.package_field;
 
+import ee.valiit.back_3nurka.business.bike.dto.PackageFieldDto;
 import org.mapstruct.*;
 
 import java.util.List;

@@ -2,8 +2,7 @@ package ee.valiit.back_3nurka.business.bike;
 
 import ee.valiit.back_3nurka.business.bike.dto.*;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
-import ee.valiit.back_3nurka.domain.package_field.PackageField;
-import ee.valiit.back_3nurka.domain.package_field.PackageFieldDto;
+import ee.valiit.back_3nurka.business.bike.dto.PackageFieldDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 
