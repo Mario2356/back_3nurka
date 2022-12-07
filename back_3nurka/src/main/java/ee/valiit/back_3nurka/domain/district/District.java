@@ -1,4 +1,4 @@
-package ee.valiit.back_3nurka.domain.address;
+package ee.valiit.back_3nurka.domain.district;
 
 import lombok.Getter;
 import lombok.Setter;
