@@ -28,6 +28,8 @@ public interface BikeOrderMapper {
     @Mapping(source = "order.user.email", target = "orderUserEmail")
     @Mapping(source = "order.status.id", target = "orderStatusId")
     @Mapping(source = "order.status.name", target = "orderStatusName")
+    @Mapping(source = "order.user.customer.firstName", target = "firstName")
+    @Mapping(source = "order.user.customer.lastName", target = "lastName")
     @Mapping(source = "order.address.district.name", target = "orderAddressDistrictName")
     @Mapping(source = "order.address.streetName", target = "orderAddressStreetName")
     @Mapping(source = "order.address.phone", target = "orderAddressPhone")

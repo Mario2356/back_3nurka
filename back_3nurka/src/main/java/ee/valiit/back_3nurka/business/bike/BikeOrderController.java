@@ -76,5 +76,10 @@ public class BikeOrderController {
         return bikeOrderBy;
 
     }
+    @GetMapping("/admin/detail")
+    @Operation(summary = "Toob OrderId järgi kõik BikeOrderid ja OrderId numbri AdminDetailsView lehele")
+    public OrderInfo getAdminBikeOrderInfo(@RequestParam Integer orderId) {
+        return bikeOrderService.getBikeOrderInfo(orderId);
+    }
 
  }
