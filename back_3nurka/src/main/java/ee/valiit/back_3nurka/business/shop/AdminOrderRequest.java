@@ -28,6 +28,12 @@ public class AdminOrderRequest implements Serializable {
     private String orderStatusName;
     @Size(max = 255)
     @NotNull
+    @Size(max = 255)
+    @NotNull
+    private  String firstName;
+    @Size(max = 255)
+    @NotNull
+    private  String lastName;
     private String orderAddressDistrictName;
     @Size(max = 50)
     @NotNull

@@ -21,18 +21,19 @@ public class ShopController {
     private ShopService shopService;
 
 
-    @PostMapping ("/order/start")
+    @PostMapping("/order/start")
     @Operation(summary = "Alustab uue userId-ga seotud Orderi, staatus Ootel")
     public OrderResponse startOrder(@RequestParam Integer userId) {
         Order order = shopService.startOrder(userId);
         return orderMapper.toOrderResponse(order);
     }
 
-@GetMapping ("/admin/orders")
+    @GetMapping("/admin/order")
     @Operation(summary = "Toob kõikide Orderite andmed Admin tabelisse")
     public List<AdminOrderRequest> getAllOrders() {
-    List<AdminOrderRequest> adminAllOrders = shopService.getAdminAllOrders();
-    return adminAllOrders;
-}
+        List<AdminOrderRequest> adminAllOrders = shopService.getAdminAllOrders();
+        return adminAllOrders;
+    }
+
 
 }

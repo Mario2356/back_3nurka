@@ -1,0 +1,5 @@
+
+w
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "user".(ãÈ›âüÿÿÿÿ
+k
+java:S3655"PCall "byUserId.isPresent()" or "!byUserId.isEmpty()" before accessing the value.(ãÈ›âüÿÿÿÿ

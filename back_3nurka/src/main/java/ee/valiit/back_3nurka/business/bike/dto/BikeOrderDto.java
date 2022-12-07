@@ -32,4 +32,6 @@ public class BikeOrderDto implements Serializable {
     private Integer packageFieldPrice;
     @Size(max = 1000)
     private String customerComment;
+    @Size(max = 1000)
+    private String techComment;
 }
