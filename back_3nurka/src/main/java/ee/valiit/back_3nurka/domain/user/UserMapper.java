@@ -17,7 +17,7 @@ public interface UserMapper {
 
     User toEntity(RegisterRequest request);
 
-    @Mapping(source = "customer.address.district.name", target = "districtName")
+    @Mapping(source = "customer.address.district.id", target = "districtId")
     @Mapping(source = "customer.address.streetName", target = "streetName")
     @Mapping(source = "customer.address.phone", target = "phone")
     LocationDto toLocationDto(User user);

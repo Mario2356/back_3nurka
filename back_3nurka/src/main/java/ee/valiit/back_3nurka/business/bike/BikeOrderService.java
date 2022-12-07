@@ -17,7 +17,6 @@ import ee.valiit.back_3nurka.domain.bike_status.BikeStatusService;
 import ee.valiit.back_3nurka.domain.order.Order;
 import ee.valiit.back_3nurka.domain.order.OrderService;
 import ee.valiit.back_3nurka.domain.package_field.PackageField;
-import ee.valiit.back_3nurka.business.bike.dto.PackageFieldDto;
 import ee.valiit.back_3nurka.domain.package_field.PackageFieldMapper;
 import ee.valiit.back_3nurka.domain.package_field.PackageFieldService;
 import ee.valiit.back_3nurka.domain.user.User;
@@ -108,7 +107,7 @@ public class BikeOrderService {
 
     public void addBikeOrder(BikeOrderRequest bikeOrderRequest) {
         BikeOrder bikeOrder = bikeOrderMapper.toBikeOrder(bikeOrderRequest);
-        Order order = orderService.getOrderById(bikeOrderRequest.getOrderId());
+        Order order = orderService.findOrderById(bikeOrderRequest.getOrderId());
         Bike bike = bikeService.getBikeById(bikeOrderRequest.getBikeId());
         WorkType workType = workTypeService.getWorkType(bikeOrderRequest.getWorkTypeId());
         BikeStatus bikeStatus = bikeStatusService.getBikeStatus(1);
@@ -125,7 +124,7 @@ public class BikeOrderService {
     }
 
     public OrderInfo getBikeOrderInfo(Integer orderId) {
-        Order orderById = orderService.getOrderById(orderId);
+        Order orderById = orderService.findOrderById(orderId);
         List<BikeOrder> bikeOrdersBy = bikeOrderDomService.findBikeOrdersBy(orderId);
         List<BikeOrderDto> bikeOrderDtos = bikeOrderMapper.toBikeOrderDtos(bikeOrdersBy);
         OrderInfo orderInfo = new OrderInfo();

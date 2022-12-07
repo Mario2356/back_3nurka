@@ -17,9 +17,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class LocationDto implements Serializable {
     private Integer districtId;
-    @Size(max = 255)
-    @NotNull
-    private String districtName;
     @Size(max = 50)
     @NotNull
     private String streetName;

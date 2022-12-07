@@ -1,7 +1,10 @@
 package ee.valiit.back_3nurka.domain.order;
 
 import ee.valiit.back_3nurka.business.shop.OrderResponse;
-import org.mapstruct.*;
+import ee.valiit.back_3nurka.business.shop.SubmitOrder;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface OrderMapper {
@@ -11,5 +14,8 @@ public interface OrderMapper {
     @Mapping(source = "status.name", target = "orderStatusName")
     @Mapping(source = "address.id", target = "addressId")
     OrderResponse toOrderResponse(Order order);
+
+    @Mapping(source = "orderStatusId", target = "status.id")
+    Order submitOrder(SubmitOrder submitOrder);
 
 }

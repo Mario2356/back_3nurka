@@ -3,10 +3,7 @@ package ee.valiit.back_3nurka.business.shop;
 import ee.valiit.back_3nurka.domain.order.Order;
 import ee.valiit.back_3nurka.domain.order.OrderMapper;
 import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,7 +16,6 @@ public class ShopController {
 
     @Resource
     private ShopService shopService;
-
 
     @PostMapping("/order/start")
     @Operation(summary = "Alustab uue userId-ga seotud Orderi, staatus Ootel")
@@ -35,5 +31,9 @@ public class ShopController {
         return adminAllOrders;
     }
 
-
+    @PutMapping("/order/submit-order")
+    @Operation(summary = "Kinnitab tellimuse. Muudab Tellimuse staatuse 'Kinnitatuks' ja liidab kõik bikeOrder hinnad kokku")
+    public void submitOrder(@RequestParam Integer orderId, @RequestBody SubmitOrder request) {
+        shopService.submitOrder(orderId, request);
+    }
 }

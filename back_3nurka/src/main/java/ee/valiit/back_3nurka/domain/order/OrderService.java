@@ -12,7 +12,6 @@ public class OrderService {
     @Resource
     OrderRepository orderRepository;
 
-
     public String generateOrderNumber(Integer userId) {
         String orderNumber = String.valueOf(userId + System.currentTimeMillis());
         return orderNumber;
@@ -22,9 +21,13 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public Order getOrderById(Integer orderId) {
+    public Order findOrderById(Integer orderId) {
         Optional<Order> byId = orderRepository.findById(orderId);
         Order order = byId.get();
         return order;
+    }
+
+    public void save(Order order) {
+        orderRepository.save(order);
     }
 }

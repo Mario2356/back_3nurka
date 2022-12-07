@@ -5,6 +5,7 @@ import ee.valiit.back_3nurka.domain.bike_order.BikeOrder;
 import ee.valiit.back_3nurka.domain.bike_order.BikeOrderDomService;
 import ee.valiit.back_3nurka.domain.bike_order.BikeOrderMapper;
 import ee.valiit.back_3nurka.domain.order.Order;
+import ee.valiit.back_3nurka.domain.order.OrderMapper;
 import ee.valiit.back_3nurka.domain.order.OrderService;
 import ee.valiit.back_3nurka.domain.order_status.OrderStatus;
 import ee.valiit.back_3nurka.domain.order_status.OrderStatusService;
@@ -18,21 +19,23 @@ import java.util.List;
 @Service
 public class ShopService {
 
-    public OrderResponse getOrderResponse;
     @Resource
-    UserService userService;
+    private UserService userService;
 
     @Resource
-    OrderStatusService orderStatusService;
+    private OrderStatusService orderStatusService;
 
     @Resource
-    OrderService orderService;
+    private OrderService orderService;
 
     @Resource
-    BikeOrderDomService bikeOrderDomService;
+    private BikeOrderDomService bikeOrderDomService;
 
     @Resource
-    BikeOrderMapper bikeOrderMapper;
+    private BikeOrderMapper bikeOrderMapper;
+
+    @Resource
+    private OrderMapper orderMapper;
 
 
     public Order startOrder(Integer userId) {
@@ -54,4 +57,9 @@ public class ShopService {
         return adminOrderDtos;
     }
 
+    public void submitOrder(Integer orderId, SubmitOrder submitOrder) {
+        Order order = orderService.findOrderById(orderId);
+        orderMapper.submitOrder(submitOrder);
+        orderService.save(order);
+    }
 }
