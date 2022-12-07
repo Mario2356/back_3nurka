@@ -1,12 +1,10 @@
 package ee.valiit.back_3nurka.domain.package_field;
 
+import ee.valiit.back_3nurka.domain.work_type.WorkType;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -27,5 +25,10 @@ public class PackageField {
     @NotNull
     @Column(name = "price", nullable = false)
     private Integer price;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "work_type_id", nullable = false)
+    private WorkType workType;
 
 }

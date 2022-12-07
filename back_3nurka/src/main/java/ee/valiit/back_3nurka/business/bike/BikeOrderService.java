@@ -17,6 +17,8 @@ import ee.valiit.back_3nurka.domain.bike_status.BikeStatusService;
 import ee.valiit.back_3nurka.domain.order.Order;
 import ee.valiit.back_3nurka.domain.order.OrderService;
 import ee.valiit.back_3nurka.domain.package_field.PackageField;
+import ee.valiit.back_3nurka.domain.package_field.PackageFieldDto;
+import ee.valiit.back_3nurka.domain.package_field.PackageFieldMapper;
 import ee.valiit.back_3nurka.domain.package_field.PackageFieldService;
 import ee.valiit.back_3nurka.domain.user.User;
 import ee.valiit.back_3nurka.domain.user.UserService;
@@ -64,6 +66,9 @@ public class BikeOrderService {
 
     @Resource
     private BikeStatusService bikeStatusService;
+
+    @Resource
+    private PackageFieldMapper packageFieldMapper;
 
 
     public List<BrandDto> getAllBrands() {
@@ -144,5 +149,12 @@ public class BikeOrderService {
             totalPrice = totalPrice + price;
         }
         return totalPrice;
+    }
+
+    public List<PackageFieldDto> findPackageFieldsBy(Integer workTypeId) {
+        List<PackageField> packageFieldsbyWorkType = packageFieldService.findPackageFieldsbyWorkType(workTypeId);
+        List<PackageFieldDto> packageFieldDtos = packageFieldMapper.toPackageFieldDtos(packageFieldsbyWorkType);
+        return packageFieldDtos;
+
     }
 }

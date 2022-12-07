@@ -2,6 +2,8 @@ package ee.valiit.back_3nurka.business.bike;
 
 import ee.valiit.back_3nurka.business.bike.dto.*;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
+import ee.valiit.back_3nurka.domain.package_field.PackageField;
+import ee.valiit.back_3nurka.domain.package_field.PackageFieldDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +44,7 @@ public class BikeOrderController {
     }
 
     @PostMapping("/repair/bikeorder")
-    @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
+    @Operation(summary = "Alustab uue orderId-ga seotud remondi bikeOrderi, staatus AktiivneTeenus")
     public void addRepairBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
         bikeOrderRequest.setDateTo(bikeOrderRequest.getDateFrom());
         bikeOrderRequest.setPackageFieldId(1);
@@ -50,14 +52,14 @@ public class BikeOrderController {
     }
 
     @PostMapping("/maintenance/bikeorder")
-    @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
+    @Operation(summary = "Alustab uue orderId-ga seotud hoolduse bikeOrderi, staatus AktiivneTeenus")
     public void addMaintenanceBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
         bikeOrderRequest.setDateTo(bikeOrderRequest.getDateFrom());
         bikeOrderService.addBikeOrder(bikeOrderRequest);
     }
 
     @PostMapping("/storage/bikeorder")
-    @Operation(summary = "Alustab uue orderId-ga seotud bikeOrderi, staatus AktiivneTeenus")
+    @Operation(summary = "Alustab uue orderId-ga seotud hoiustamisega bikeOrderi, staatus AktiivneTeenus")
     public void addStorageBikeOrder (@RequestBody BikeOrderRequest bikeOrderRequest) {
         bikeOrderService.addBikeOrder(bikeOrderRequest);
     }
@@ -80,6 +82,14 @@ public class BikeOrderController {
     @Operation(summary = "Toob OrderId järgi kõik BikeOrderid ja OrderId numbri AdminDetailsView lehele")
     public OrderInfo getAdminBikeOrderInfo(@RequestParam Integer orderId) {
         return bikeOrderService.getBikeOrderInfo(orderId);
+    }
+
+    @GetMapping("/storage/packages")
+    @Operation(summary = "Toob workTypeId järgi kõik packageFieldid")
+    public List<PackageFieldDto> findPackageFieldsBy (@RequestParam Integer workTypeId) {
+        List<PackageFieldDto> packageFieldsBy = bikeOrderService.findPackageFieldsBy(workTypeId);
+        return packageFieldsBy;
+
     }
 
  }
