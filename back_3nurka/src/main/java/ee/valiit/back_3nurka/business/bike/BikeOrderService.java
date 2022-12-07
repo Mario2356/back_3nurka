@@ -3,7 +3,6 @@ package ee.valiit.back_3nurka.business.bike;
 
 import ee.valiit.back_3nurka.business.bike.dto.*;
 import ee.valiit.back_3nurka.domain.bike.Bike;
-import ee.valiit.back_3nurka.domain.bike.BikeMapper;
 import ee.valiit.back_3nurka.domain.bike.BikeService;
 import ee.valiit.back_3nurka.domain.bike.brand.Brand;
 import ee.valiit.back_3nurka.domain.bike.brand.BrandDto;
@@ -41,12 +40,8 @@ public class BikeOrderService {
     @Resource
     private UserService userService;
 
-
     @Resource
     private BikeService bikeService;
-
-    @Resource
-    private BikeMapper bikeMapper;
 
     @Resource
     private BikeOrderMapper bikeOrderMapper;

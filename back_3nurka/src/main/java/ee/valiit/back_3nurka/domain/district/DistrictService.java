@@ -3,6 +3,7 @@ package ee.valiit.back_3nurka.domain.district;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,4 +18,8 @@ public class DistrictService {
         return district;
     }
 
+    public List<District> getAllDistricts() {
+        return districtRepository.findAll();
+
+    }
 }
