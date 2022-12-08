@@ -19,7 +19,9 @@ public class LocationRequest implements Serializable {
     private Boolean useDefaultAddress = true;
     private Integer userId;
     private Integer districtId;
-    private Integer districtName;
+    @Size(max = 255)
+    @NotNull
+    private String districtName;
     @Size(max = 50)
     @NotNull
     private String streetName;
