@@ -66,7 +66,6 @@ INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '
 INSERT INTO public.bike_status (id, name) VALUES (DEFAULT, 'Aktiivne teenus');
 INSERT INTO public.bike_status (id, name) VALUES (DEFAULT, 'Lõpetatud teenus');
 
-
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 4, 'must', 'A');
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 5, 4, 'valge', 'A');
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 4, 'uus ratas', 'A');
@@ -76,10 +75,46 @@ INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 2, 'kollane', 'D');
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 2, 'must ', 'A');
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 2, 'valge', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 2, 'valge', 'D');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 8, 2, 'roosa', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 1, 3, 'naabrimehe ratas', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 8, 6, 'Pro', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 8, 6, 'Pro', 'D');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 5, 6, 'Vähe pro', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 6, 6, 'Kolmerattaline punane ratas', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 1, 7, 'Karriba', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 2, 7, 'postiljon', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 7, 'Must üherattaline', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 9, 7, 'lihtne ratas', 'A');
+INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 7, 8, 'penelope cruz', 'A');
 
 INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 5, 1, NULL, '1670491847531', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 2, 2, null, '1670532864918', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 2, 2, null, '1670532907165', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 3, 2, null, '1670533036926', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 4, 2, null, '1670533090130', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 5, 2, null, '1670533251403', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 6, 2, null, '1670533398774', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 7, 2, null, '1670533563954', NULL, NULL, NULL);
+INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 8, 2, null, '1670533731539', NULL, NULL, NULL);
 
-
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 2, 8, 1, 1, 1, '2022-12-23', '2022-12-23', '', 'täitsa katki');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 2, 11, 1, 1, 1, '2023-01-19', '2023-01-19', '', 'mitte nii katki');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 3, 10, 2, 1, 2, '2023-02-09', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 4, 12, 3, 1, 6, '2022-12-29', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 5, 2, 1, 1, 1, '2024-04-11', '2024-04-11', '', 'vähe õli');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 5, 1, 3, 1, 5, '2023-01-20', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 6, 4, 1, 1, 1, '2023-06-22', '2023-06-22', '', 'Liiga sinine');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 6, 5, 1, 1, 1, '2023-08-02', '2023-08-02', '', 'pidurid kadusid ära');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 6, 6, 3, 1, 6, '2023-03-13', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 7, 13, 1, 1, 1, '2023-01-01', '2023-01-01', '', 'Võiks olla kiirem');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 7, 15, 3, 1, 5, '2023-03-06', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 7, 16, 1, 1, 1, '2023-01-09', '2023-01-09', '', 'Liiga palju rattaid');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 8, 17, 2, 1, 3, '2022-12-29', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 8, 19, 1, 1, 1, '2022-12-18', '2022-12-18', '', 'Pange rattaid juurde');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 8, 18, 1, 1, 1, '2023-04-11', '2023-04-11', '', 'Postiljon sõitis puru, lenksud puudu');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 8, 20, 3, 1, 6, '2023-01-30', null, '', '');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 9, 21, 2, 1, 4, '2022-12-26', null, '', '');
 
 
 

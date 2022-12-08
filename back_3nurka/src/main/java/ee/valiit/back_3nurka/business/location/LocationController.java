@@ -25,6 +25,12 @@ public class LocationController {
         locationService.addNewAddressToOrder(locationRequest);
     }
 
+    @PutMapping("/profile/address")
+    @Operation(summary = "Loob aadressi profiilile")
+    public void addNewAddressToProfile(@RequestBody LocationRequest locationRequest) {
+        locationService.addNewAddressToProfile(locationRequest);
+    }
+
     @GetMapping("/order/districts")
     @Operation(summary = "Leiab kõik linnaosad")
     public List<DistrictDto> allDistricts() {

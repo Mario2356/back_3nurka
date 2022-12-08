@@ -74,4 +74,13 @@ public class LocationService {
         List<DistrictDto> districtDtos = districtMapper.toDistrictDtos(districts);
         return districtDtos;
     }
+
+    public void addNewAddressToProfile(LocationRequest locationRequest) {
+        Address address = new Address();
+        District district = districtService.getDistrict(locationRequest.getDistrictId());
+        address.setDistrict(district);
+        address.setPhone(locationRequest.getPhone());
+        address.setStreetName(locationRequest.getStreetName());
+        addressService.addAddress(address);
+    }
 }
