@@ -3,6 +3,7 @@ package ee.valiit.back_3nurka.domain.bike_order;
 import ee.valiit.back_3nurka.business.bike.dto.AdminBikeOrderRequest;
 import ee.valiit.back_3nurka.business.bike.dto.BikeOrderDto;
 import ee.valiit.back_3nurka.business.bike.dto.BikeOrderRequest;
+import ee.valiit.back_3nurka.business.bike.dto.TechCommentInfo;
 import ee.valiit.back_3nurka.business.shop.AdminOrderRequest;
 import org.mapstruct.*;
 
@@ -20,7 +21,7 @@ public interface BikeOrderMapper {
     @Mapping(source = "workType.name", target = "workTypeName")
     @Mapping(source = "packageField.name", target = "packageFieldName")
     @Mapping(source = "packageField.price", target = "packageFieldPrice")
-    BikeOrderDto toBikeOrderDto (BikeOrder bikeOrder);
+    BikeOrderDto toBikeOrderDto(BikeOrder bikeOrder);
 
     List<BikeOrderDto> toBikeOrderDtos(List<BikeOrder> bikeOrders);
 
@@ -64,6 +65,14 @@ public interface BikeOrderMapper {
     @Mapping(source = "packageField.price", target = "packageFieldPrice")
     AdminBikeOrderRequest toAdminBikeOrderDto(BikeOrder bikeOrder);
 
+
+
+
+//    BikeOrder ToBikeOrder(TechCommentInfo Info);
+//
+//    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+//    BikeOrder updateBikeOrderTechCommentInfo(TechCommentInfo techCommentInfo, @MappingTarget BikeOrder bikeOrder);
+//
 }
 
 //    private Integer bikeOrderId;
