@@ -32,8 +32,8 @@ public class ShopController {
     }
 
     @PutMapping("/order/submit-order")
-    @Operation(summary = "Kinnitab tellimuse. Muudab Tellimuse staatuse 'Kinnitatuks' ja liidab kõik bikeOrder hinnad kokku")
-    public void submitOrder(@RequestParam Integer orderId, @RequestBody SubmitOrder request) {
-        shopService.submitOrder(orderId, request);
+    @Operation(summary = "Kinnitab tellimuse. Muudab Tellimuse staatuse 'Kinnitatuks'")
+    public void submitOrder(@RequestParam Integer orderId) {
+        shopService.submitOrder(orderId);
     }
 }

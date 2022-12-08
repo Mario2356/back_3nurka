@@ -57,9 +57,10 @@ public class ShopService {
         return adminOrderDtos;
     }
 
-    public void submitOrder(Integer orderId, SubmitOrder submitOrder) {
+    public void submitOrder(Integer orderId) {
+        OrderStatus statusActive = orderStatusService.getOrderStatus(2);
         Order order = orderService.findOrderById(orderId);
-        orderMapper.submitOrder(submitOrder);
+        order.setStatus(statusActive);
         orderService.save(order);
     }
 }

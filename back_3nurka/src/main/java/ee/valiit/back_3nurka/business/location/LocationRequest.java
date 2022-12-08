@@ -15,8 +15,11 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LocationDto implements Serializable {
+public class LocationRequest implements Serializable {
+    private Boolean useDefaultAddress = true;
+    private Integer userId;
     private Integer districtId;
+    private Integer districtName;
     @Size(max = 50)
     @NotNull
     private String streetName;
