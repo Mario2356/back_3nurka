@@ -1,6 +1,6 @@
 package ee.valiit.back_3nurka.domain.user;
 
-import ee.valiit.back_3nurka.business.location.LocationDto;
+import ee.valiit.back_3nurka.business.location.LocationRequest;
 import ee.valiit.back_3nurka.business.login.LoginResponse;
 import ee.valiit.back_3nurka.business.user.dto.RegisterRequest;
 import org.mapstruct.Mapper;
@@ -20,6 +20,6 @@ public interface UserMapper {
     @Mapping(source = "customer.address.district.id", target = "districtId")
     @Mapping(source = "customer.address.streetName", target = "streetName")
     @Mapping(source = "customer.address.phone", target = "phone")
-    LocationDto toLocationDto(User user);
+    LocationRequest toLocationDto(User user);
 }
 

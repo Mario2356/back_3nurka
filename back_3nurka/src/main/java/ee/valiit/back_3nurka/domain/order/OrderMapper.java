@@ -15,7 +15,5 @@ public interface OrderMapper {
     @Mapping(source = "address.id", target = "addressId")
     OrderResponse toOrderResponse(Order order);
 
-    @Mapping(source = "orderStatusId", target = "status.id")
-    Order submitOrder(SubmitOrder submitOrder);
 
 }

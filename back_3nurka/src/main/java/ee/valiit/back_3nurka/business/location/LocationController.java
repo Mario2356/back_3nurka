@@ -15,14 +15,14 @@ public class LocationController {
 
     @GetMapping("/order/profile")
     @Operation(summary = "Toob userId järgi tema profiiliaadressi")
-    public LocationDto getProfileAddress(@RequestParam Integer userId) {
+    public LocationRequest getProfileAddress(@RequestParam Integer userId) {
         return locationService.getProfileAddress(userId);
     }
 
-    @PostMapping("/order/custom")
+    @PostMapping("/order/address")
     @Operation(summary = "Loob aadressi tellimusse")
-    public void addNewAddressToOrder(@RequestBody LocationDto locationDto) {
-        locationService.addNewAddressToOrder(locationDto);
+    public void addNewAddressToOrder(@RequestBody LocationRequest locationRequest) {
+        locationService.addNewAddressToOrder(locationRequest);
     }
 
     @GetMapping("/order/districts")

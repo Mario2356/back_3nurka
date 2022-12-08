@@ -32,20 +32,36 @@ public class LocationService {
     @Resource
     private DistrictMapper districtMapper;
 
-    public LocationDto getProfileAddress(Integer userId) {
+    public LocationRequest getProfileAddress(Integer userId) {
         User user = userService.getUser(userId);
-        LocationDto locationDto = userMapper.toLocationDto(user);
-        return locationDto;
+        LocationRequest locationRequest = userMapper.toLocationDto(user);
+        return locationRequest;
     }
 
-    public void addNewAddressToOrder(LocationDto locationDto) {
-
-        District district = districtService.getDistrict(locationDto.getDistrictId());
-        Address address = new Address();
-        address.setDistrict(district);
-        address.setPhone(locationDto.getPhone());
-        address.setStreetName(locationDto.getStreetName());
+    public void addNewAddressToOrder(LocationRequest locationRequest) {
+        Address address;
+        if (locationRequest.getUseDefaultAddress()) {
+            address = getUserDefaultAddress(locationRequest);
+        } else {
+            address = createNewAddress(locationRequest);
+        }
         addressService.addAddress(address);
+    }
+
+    private Address createNewAddress(LocationRequest locationRequest) {
+        Address address = new Address();
+        District district = districtService.getDistrict(locationRequest.getDistrictId());
+        address.setDistrict(district);
+        address.setPhone(locationRequest.getPhone());
+        address.setStreetName(locationRequest.getStreetName());
+        return address;
+    }
+
+    private Address getUserDefaultAddress(LocationRequest locationRequest) {
+        Address address;
+        User user = userService.getUser(locationRequest.getUserId());
+        address = user.getCustomer().getAddress();
+        return address;
     }
 
     public List<DistrictDto> getAllDistricts() {
