@@ -28,7 +28,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-
 public class BikeOrderService {
 
     @Resource
@@ -63,6 +62,13 @@ public class BikeOrderService {
 
     @Resource
     private PackageFieldMapper packageFieldMapper;
+
+    public void addTechComment(Integer bikeOrderId, String techComment) {
+        BikeOrder bikeOrder = bikeOrderDomService.findBikeOrderById(bikeOrderId);
+        bikeOrder.setTechComment(techComment);
+        bikeOrderDomService.save(bikeOrder);
+    }
+
 
 
     public List<BrandDto> getAllBrands() {
@@ -151,4 +157,5 @@ public class BikeOrderService {
         return packageFieldDtos;
 
     }
+
 }

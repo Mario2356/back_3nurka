@@ -90,5 +90,11 @@ public class BikeOrderController {
         return packageFieldsBy;
 
     }
+    @PutMapping("/admin/submit/tech-comment")
+    @Operation(summary = "Lisab tehniku kommentaari andmebaasi")
+    public void addTechComment(@RequestParam Integer bikeOrderId, @RequestParam String techComment) {
+        bikeOrderService.addTechComment(bikeOrderId, techComment);
+    }
+
 
 }

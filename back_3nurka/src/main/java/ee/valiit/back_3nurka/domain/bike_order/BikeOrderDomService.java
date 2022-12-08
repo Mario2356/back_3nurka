@@ -11,7 +11,7 @@ import java.util.Optional;
 public class BikeOrderDomService {
 
     @Resource
-    BikeOrderRepository bikeOrderRepository;
+    private BikeOrderRepository bikeOrderRepository;
     public void addBikeOrder(BikeOrder bikeOrder) {
         bikeOrderRepository.save(bikeOrder);
 
@@ -33,5 +33,9 @@ public List<BikeOrder> findAllOrders() {
         return bikeOrder;
     }
 
+    public void save(BikeOrder bikeOrder) {
+        bikeOrderRepository.save(bikeOrder);
+
+    }
 }
 
