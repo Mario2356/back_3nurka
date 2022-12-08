@@ -20,7 +20,6 @@ INSERT INTO public.address (id, district_id, street_name, phone) VALUES (DEFAULT
 INSERT INTO public.address (id, district_id, street_name, phone) VALUES (DEFAULT, 4, 'Mardi 15-10', '+372 555333');
 INSERT INTO public.address (id, district_id, street_name, phone) VALUES (DEFAULT, 5, 'Tiiva 19', '+372 555777');
 
-
 INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFAULT, 1, 'Mari', 'Sepp');
 INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFAULT, 1, 'Jaan', 'Sepp');
 INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFAULT, 2, 'Leila', 'Saar');
@@ -28,9 +27,6 @@ INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFA
 INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFAULT, 3, 'Tiit', 'Tiitson');
 INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFAULT, 4, 'Tom', 'Tomson');
 INSERT INTO public.customer (id, address_id, first_name, last_name) VALUES (DEFAULT, 5, 'Kati', 'Sepp');
-
-
-
 
 INSERT INTO public.user (id, role_id, customer_id, email, password) VALUES (DEFAULT, 1, NULL, 'admin', '123');
 INSERT INTO public.user (id, role_id, customer_id, email, password) VALUES (DEFAULT, 2, 2, 'mari@mail.ee', '123');
@@ -40,7 +36,6 @@ INSERT INTO public.user (id, role_id, customer_id, email, password) VALUES (DEFA
 INSERT INTO public.user (id, role_id, customer_id, email, password) VALUES (DEFAULT, 2, 5, 'tiit@mail.ee', '123');
 INSERT INTO public.user (id, role_id, customer_id, email, password) VALUES (DEFAULT, 2, 6, 'tom@mail.ee', '123');
 INSERT INTO public.user (id, role_id, customer_id, email, password) VALUES (DEFAULT, 2, 7, 'kati@mail.ee', '123');
-
 
 INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Scott', DEFAULT);
 INSERT INTO public.brand (id, name, is_other) VALUES (DEFAULT, 'Merida', DEFAULT);
@@ -68,15 +63,8 @@ INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '3 kuud', 20);
 INSERT INTO public.package (id, work_type_id, name, price) VALUES (DEFAULT, 3, '6 kuud ', 30);
 
-
-
-
 INSERT INTO public.bike_status (id, name) VALUES (DEFAULT, 'Aktiivne teenus');
 INSERT INTO public.bike_status (id, name) VALUES (DEFAULT, 'Lõpetatud teenus');
-
-
-
-
 
 
 INSERT INTO public.bike (id, brand_id, user_id, model, status) VALUES (DEFAULT, 4, 4, 'must', 'A');
