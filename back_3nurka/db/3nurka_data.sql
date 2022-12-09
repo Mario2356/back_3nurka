@@ -99,7 +99,7 @@ INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from,
 INSERT INTO public.order (id, user_id, status_id, address_id, number, date_from, date_to, price) VALUES (DEFAULT, 8, 2, null, '1670533731539', NULL, NULL, NULL);
 
 INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 2, 8, 1, 1, 1, '2022-12-23', '2022-12-23', '', 'täitsa katki');
-INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 2, 11, 1, 1, 1, '2023-01-19', '2023-01-19', '', 'mitte nii katki');
+INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 2, 11, 1, 1, 1, '2023-01-19', '2023-01-19', '', 'katki');
 INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 3, 10, 2, 1, 2, '2023-02-09', null, '', '');
 INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 4, 12, 3, 1, 6, '2022-12-29', null, '', '');
 INSERT INTO public.bike_order (id, order_id, bike_id, work_type_id, bike_status_id, package_id, date_from, date_to, tech_comment, customer_comment) values (DEFAULT, 5, 2, 1, 1, 1, '2024-04-11', '2024-04-11', '', 'vähe õli');
