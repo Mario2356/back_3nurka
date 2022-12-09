@@ -25,7 +25,7 @@ public class LocationController {
         locationService.addNewAddressToOrder(locationRequest);
     }
 
-    @PutMapping("/profile/address")
+    @PostMapping("/profile/address")
     @Operation(summary = "Loob aadressi profiilile")
     public void addNewAddressToProfile(@RequestBody LocationRequest locationRequest) {
         locationService.addNewAddressToProfile(locationRequest);
